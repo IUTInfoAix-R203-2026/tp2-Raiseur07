@@ -2,8 +2,9 @@ package fr.univ_amu.iut.exercice2;
 
 /// Exercice 2 - FizzBuzz.
 ///
-/// Classique des entretiens d'embauche et exercice parfait pour pratiquer la **triangulation** :
-/// commencez par un retour en dur, puis généralisez dès qu'un deuxième test vous y force.
+/// Classique des entretiens d'embauche et exercice parfait pour pratiquer la
+/// **triangulation** : commencez par un retour en dur, puis généralisez dès
+/// qu'un deuxième test vous y force.
 ///
 /// Règles : pour chaque entier `n`,
 ///
@@ -21,18 +22,36 @@ public class FizzBuzzer {
     // TODO exercice 2 : ajouter les cas Fizz, Buzz et FizzBuzz avant le
     // return par défaut. Activez les tests dans l'ordre : 1 et 2 passent
     // directement (fake it via le return final), 3 demande d'introduire
-    // un premier cas, etc.
+    // un premier cas, etc
+    if (n % 3 == 0 && n % 5 == 0) {
+      return "FizzBuzz";
+    }
+
+    if (n % 3 == 0) {
+      return "Fizz";
+    }
+
+    if (n % 5 == 0) {
+      return "Buzz";
+    }
+
     return String.valueOf(n);
+
   }
 
   /// Retourne la séquence FizzBuzz des entiers de 1 à `n` inclus.
   ///
   /// @param n taille de la séquence demandée (positif)
   /// @return tableau de `n` chaînes FizzBuzz dans l'ordre croissant
+  // TODO exercice 2 : remplir sequence[i] en réutilisant fizzBuzz(i+1).
+  // Ne dupliquez pas la logique : appelez fizzBuzz !
   public String[] fizzBuzzJusquA(int n) {
     String[] sequence = new String[n];
-    // TODO exercice 2 : remplir sequence[i] en réutilisant fizzBuzz(i+1).
-    // Ne dupliquez pas la logique : appelez fizzBuzz !
+
+    for (int i = 0; i < n; i++) {
+      sequence[i] = fizzBuzz(i + 1);
+    }
+
     return sequence;
   }
 }
