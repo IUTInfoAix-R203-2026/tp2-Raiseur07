@@ -36,7 +36,6 @@ public class FizzBuzzer {
     }
 
     return String.valueOf(n);
-
   }
 
   /// Retourne la séquence FizzBuzz des entiers de 1 à `n` inclus.
